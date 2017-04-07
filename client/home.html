@@ -1,0 +1,31 @@
+<template name="home">
+<h1>Périphériques connectés <span class="badge">{{ keepers.length }}</span></h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Désignation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each keepers}}
+      <tr>
+        <td>{{ _id._str }}</td>
+        <td>{{ name }}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<h2 class="sub-header">Derniers événements</h2>
+<br>
+<div class="row placeholders">
+{{#each lastEvents}}
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="{{ image }}" width="200" />
+    <h4>{{ _id._str }}</h4>
+  </div>
+{{/each}}
+</div>
+</template>

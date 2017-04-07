@@ -1,0 +1,16 @@
+<template name="keeper">
+
+<span class="pull-right"><button class="btn btn-danger removeKeeper"><i class="fa fa-plug"></i> Déconnecter</button></span>
+
+<h1><i class="fa fa-video-camera" aria-hidden="true"></i>  <input style="border: none;" type="text" id="keeperName" value="{{#if keeper.name}}{{ keeper.name }}{{else}}{{ keeper._id._str }}{{/if}}" /></h1>
+<h2 class="sub-header">Derniers événements</h2>
+<br>
+<div class="row placeholders">
+{{#each kevents}}
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="{{ image }}" width="200" />
+    <h4>{{ _id._str }}</h4>
+  </div>
+{{/each}}
+</div>
+</template>
